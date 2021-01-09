@@ -4,6 +4,7 @@
 int Dissasemble8080p(unsigned char* codebuffer, int pc){
     unsigned char* code=&codebuffer[pc];
     int opbytes = 1;
+    printf("0x%04x  ", pc);
     switch(*code){
         case 0x00:{
             printf("NOP \n");
@@ -261,12 +262,12 @@ int Dissasemble8080p(unsigned char* codebuffer, int pc){
             break;
         }
         case 0x3e:{
-            printf("MVI A, 0x%02x",code[1]);
+            printf("MVI A, 0x%02x \n",code[1]);
             opbytes=2;
             break;
         }
         case 0x3f:{
-            printf("CMC");
+            printf("CMC \n");
             break;
         }
         case 0x40: printf("MOV    B,B \n"); break;
@@ -699,4 +700,3 @@ int main(){
     }
     return 0;
 }
-
