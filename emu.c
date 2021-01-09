@@ -61,8 +61,468 @@ int Emulate8080(State8080* state){
             state->pc += 2;
             break;
         }
-        case 0xc3:{
+        case 0x03:{
+             // to do 
+        }
+        case 0x04:{
+            uint8_t answer = state->b + 1;
 
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if(answer == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            state->cc.p = parity(answer,8);
+
+            state->b = answer;
+            
+            break;
+        }
+        case 0x05:{
+             uint8_t answer = state->b - 1;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if(answer == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            state->cc.p = parity(answer,8);
+
+            state->b = answer;
+            
+            break;
+        }
+        case 0x0c:{
+            uint8_t answer = state->c + 1;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if(answer == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            state->cc.p = parity(answer,8);
+
+            state->c = answer;
+            
+            break;
+        }
+        case 0x0d:{
+            uint8_t answer = state->c - 1;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if(answer == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            state->cc.p = parity(answer,8);
+
+            state->c = answer;
+            
+            break;
+        }
+        case 0x14:{
+            uint8_t answer = state->d + 1;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if(answer == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            state->cc.p = parity(answer,8);
+
+            state->d = answer;
+            
+            break;
+        }
+        case 0x15:{
+            uint8_t answer = state->d - 1;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if(answer == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            state->cc.p = parity(answer,8);
+
+            state->d = answer;
+            
+            break;
+        }
+        case 0x1c:{
+            uint8_t answer = state->e + 1;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if(answer == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            state->cc.p = parity(answer,8);
+
+            state->e = answer;
+            
+            break;
+        }
+        case 0x1d:{
+            uint8_t answer = state->e - 1;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if(answer == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            state->cc.p = parity(answer,8);
+
+            state->e = answer;
+            
+            break;
+        }
+        case 0x24:{
+            uint8_t answer = state->h + 1;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if(answer == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            state->cc.p = parity(answer,8);
+
+            state->h = answer;
+            
+            break;
+        }
+        case 0x25:{
+            uint8_t answer = state->h - 1;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if(answer == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            state->cc.p = parity(answer,8);
+
+            state->h = answer;
+            
+            break;
+        }
+        case 0x2c:{
+            uint8_t answer = state->l + 1;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if(answer == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            state->cc.p = parity(answer,8);
+
+            state->l = answer;
+            
+            break;
+        }
+        case 0x2d:{
+            uint8_t answer = state->l - 1;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if(answer == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            state->cc.p = parity(answer,8);
+
+            state->l = answer;
+            
+            break;
+        }
+        case 0x34:{
+            uint16_t offset = (state->h<<8)|(state->l);
+            uint16_t answer = state->memory[offset] + 1;
+
+            if((answer & 0xff) == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            state->cc.p = parity((answer & 0xff),8);
+
+            state->memory[offset] = (answer & 0xff);
+            
+            break;
+        }
+        case 0x35:{
+            uint16_t offset = (state->h<<8)|(state->l);
+            uint16_t answer = state->memory[offset] - 1;
+
+            if((answer & 0xff) == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            state->cc.p = parity((answer & 0xff),8);
+
+            state->memory[offset] = (answer & 0xff);
+            
+            break;
+        }
+        case 0x3c:{
+            uint8_t answer = state->a + 1;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if(answer == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            state->cc.p = parity(answer,8);
+
+            state->a = answer;
+            
+            break;
+        }
+        case 0x3d:{
+            uint8_t answer = state->a - 1;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if(answer == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            state->cc.p = parity(answer,8);
+
+            state->a = answer;
+            
+            break;
         }
         case 0x80:{
             uint16_t answer = (uint16_t) state->a + (uint16_t) state->b;
@@ -419,6 +879,80 @@ int Emulate8080(State8080* state){
 
             break;
         }
+        case 0xd6:{
+            uint16_t answer = (uint16_t) state->a - (uint16_t) opcode[1];
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if((answer & 0xff) == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            // Carry flag    
+            if (answer > 0xff)    
+                state->cc.cy = 1;    
+            else    
+                state->cc.cy = 0;  
+
+            state->cc.p = parity((answer & 0xff),8);
+
+            state->a = (answer & 0xff);
+
+            state->pc += 1;
+            
+            break;
+        }
+        case 0xde:{
+            uint16_t answer = (uint16_t) state->a - (uint16_t) opcode[1] - (uint16_t) state->cc.cy;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if((answer & 0xff) == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            // Carry flag    
+            if (answer > 0xff)    
+                state->cc.cy = 1;    
+            else    
+                state->cc.cy = 0;  
+
+            state->cc.p = parity((answer & 0xff),8);
+
+            state->a = (answer & 0xff);
+            
+            state->pc += 1;
+
+            break;
+        }
         case 0x88:{
              uint16_t answer = (uint16_t) state->a + (uint16_t) state->b + (uint16_t) state->cc.cy; 
 
@@ -734,6 +1268,533 @@ int Emulate8080(State8080* state){
             state->a = (answer & 0xff);
             
             break;        
+        }
+        case 0x91:{
+            uint16_t answer = (uint16_t) state->a - (uint16_t) state->c;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if((answer & 0xff) == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            // Carry flag    
+            if (answer > 0xff)    
+                state->cc.cy = 1;    
+            else    
+                state->cc.cy = 0;  
+
+            state->cc.p = parity((answer & 0xff),8);
+
+            state->a = (answer & 0xff);
+            
+            break;
+        }
+        case 0x92:{
+            uint16_t answer = (uint16_t) state->a + (uint16_t) state->d;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if((answer & 0xff) == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            // Carry flag    
+            if (answer > 0xff)    
+                state->cc.cy = 1;    
+            else    
+                state->cc.cy = 0;  
+
+            state->cc.p = parity((answer & 0xff),8);
+
+            state->a = (answer & 0xff);
+            
+            break;
+        }
+        case 0x93:{
+            uint16_t answer = (uint16_t) state->a - (uint16_t) state->e;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if((answer & 0xff) == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            // Carry flag    
+            if (answer > 0xff)    
+                state->cc.cy = 1;    
+            else    
+                state->cc.cy = 0;  
+
+            state->cc.p = parity((answer & 0xff),8);
+
+            state->a = (answer & 0xff);
+            
+            break;
+        }
+        case 0x94:{
+            uint16_t answer = (uint16_t) state->a + (uint16_t) state->h;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if((answer & 0xff) == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            // Carry flag    
+            if (answer > 0xff)    
+                state->cc.cy = 1;    
+            else    
+                state->cc.cy = 0;  
+
+            state->cc.p = parity((answer & 0xff),8);
+
+            state->a = (answer & 0xff);
+            
+            break;
+        }
+        case 0x95:{
+            uint16_t answer = (uint16_t) state->a - (uint16_t) state->l;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if((answer & 0xff) == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            // Carry flag    
+            if (answer > 0xff)    
+                state->cc.cy = 1;    
+            else    
+                state->cc.cy = 0;  
+
+            state->cc.p = parity((answer & 0xff),8);
+
+            state->a = (answer & 0xff);
+            
+            break;
+        }
+        case 0x96:{
+            uint16_t offset =  (state->h<<8)|(state->l);
+            uint16_t answer = (uint16_t) state->a + state->memory[offset];
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if((answer & 0xff) == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            // Carry flag    
+            if (answer > 0xff)    
+                state->cc.cy = 1;    
+            else    
+                state->cc.cy = 0;  
+
+            state->cc.p = parity((answer & 0xff),8);
+
+            state->a = (answer & 0xff);
+            
+            break;
+        }
+        case 0x97:{
+            uint16_t answer = (uint16_t) state->a - (uint16_t) state->a;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if((answer & 0xff) == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            // Carry flag    
+            if (answer > 0xff)    
+                state->cc.cy = 1;    
+            else    
+                state->cc.cy = 0;  
+
+            state->cc.p = parity((answer & 0xff),8);
+
+            state->a = (answer & 0xff);
+            
+            break;
+        }
+        case 0x98:{
+            uint16_t answer = (uint16_t) state->a - (uint16_t) state->b - (uint16_t) state->cc.cy;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if((answer & 0xff) == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            // Carry flag    
+            if (answer > 0xff)    
+                state->cc.cy = 1;    
+            else    
+                state->cc.cy = 0;  
+
+            state->cc.p = parity((answer & 0xff),8);
+
+            state->a = (answer & 0xff);
+            
+            break;
+        }
+        case 0x99:{
+            uint16_t answer = (uint16_t) state->a - (uint16_t) state->c - (uint16_t) state->cc.cy;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if((answer & 0xff) == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            // Carry flag    
+            if (answer > 0xff)    
+                state->cc.cy = 1;    
+            else    
+                state->cc.cy = 0;  
+
+            state->cc.p = parity((answer & 0xff),8);
+
+            state->a = (answer & 0xff);
+            
+            break;
+        }
+        case 0x9a:{
+            uint16_t answer = (uint16_t) state->a - (uint16_t) state->d - (uint16_t) state->cc.cy;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if((answer & 0xff) == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            // Carry flag    
+            if (answer > 0xff)    
+                state->cc.cy = 1;    
+            else    
+                state->cc.cy = 0;  
+
+            state->cc.p = parity((answer & 0xff),8);
+
+            state->a = (answer & 0xff);
+            
+            break;
+        }
+        case 0x9b:{
+            uint16_t answer = (uint16_t) state->a - (uint16_t) state->e - (uint16_t) state->cc.cy;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if((answer & 0xff) == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            // Carry flag    
+            if (answer > 0xff)    
+                state->cc.cy = 1;    
+            else    
+                state->cc.cy = 0;  
+
+            state->cc.p = parity((answer & 0xff),8);
+
+            state->a = (answer & 0xff);
+            
+            break;
+        }
+        case 0x9c:{
+            uint16_t answer = (uint16_t) state->a - (uint16_t) state->h - (uint16_t) state->cc.cy;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if((answer & 0xff) == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            // Carry flag    
+            if (answer > 0xff)    
+                state->cc.cy = 1;    
+            else    
+                state->cc.cy = 0;  
+
+            state->cc.p = parity((answer & 0xff),8);
+
+            state->a = (answer & 0xff);
+            
+            break;
+        }
+        case 0x9d:{
+            uint16_t answer = (uint16_t) state->a - (uint16_t) state->l - (uint16_t) state->cc.cy;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if((answer & 0xff) == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            // Carry flag    
+            if (answer > 0xff)    
+                state->cc.cy = 1;    
+            else    
+                state->cc.cy = 0;  
+
+            state->cc.p = parity((answer & 0xff),8);
+
+            state->a = (answer & 0xff);
+            
+            break;
+        }
+        case 0x9e:{
+            uint16_t offset = (state->h<<8)|(state->l);
+            uint16_t answer = (uint16_t) state->a - state->memory[offset] - (uint16_t) state->cc.cy;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if((answer & 0xff) == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            // Carry flag    
+            if (answer > 0xff)    
+                state->cc.cy = 1;    
+            else    
+                state->cc.cy = 0;  
+
+            state->cc.p = parity((answer & 0xff),8);
+
+            state->a = (answer & 0xff);
+            
+            break;
+        }
+        case 0x9f:{
+            uint16_t answer = (uint16_t) state->a - (uint16_t) state->a - (uint16_t) state->cc.cy;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if((answer & 0xff) == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            // Carry flag    
+            if (answer > 0xff)    
+                state->cc.cy = 1;    
+            else    
+                state->cc.cy = 0;  
+
+            state->cc.p = parity((answer & 0xff),8);
+
+            state->a = (answer & 0xff);
+            
+            break;
         }
     }    
     state->pc+=1;  //for the opcode    
