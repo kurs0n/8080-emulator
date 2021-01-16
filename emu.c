@@ -93,6 +93,8 @@ int Emulate8080(State8080* state){
                 state->cc.s = 0;
             }
 
+            state->cc.ac = (answer > 0x09);
+
             state->cc.p = parity(answer,8);
 
             state->b = answer;
@@ -121,6 +123,8 @@ int Emulate8080(State8080* state){
             else {
                 state->cc.s = 0;
             }
+
+            state->cc.ac = (answer > 0x09);
 
             state->cc.p = parity(answer,8);
 
@@ -175,6 +179,8 @@ int Emulate8080(State8080* state){
                 state->cc.s = 0;
             }
 
+            state->cc.ac = (answer > 0x09);
+
             state->cc.p = parity(answer,8);
 
             state->c = answer;
@@ -203,6 +209,8 @@ int Emulate8080(State8080* state){
             else {
                 state->cc.s = 0;
             }
+
+            state->cc.ac = (answer > 0x09);
 
             state->cc.p = parity(answer,8);
 
@@ -242,6 +250,8 @@ int Emulate8080(State8080* state){
                 state->cc.s = 0;
             }
 
+            state->cc.ac = (answer > 0x09);
+
             state->cc.p = parity(answer,8);
 
             state->d = answer;
@@ -270,6 +280,8 @@ int Emulate8080(State8080* state){
             else {
                 state->cc.s = 0;
             }
+
+            state->cc.ac = (answer > 0x09);
 
             state->cc.p = parity(answer,8);
 
@@ -322,6 +334,8 @@ int Emulate8080(State8080* state){
                 state->cc.s = 0;
             }
 
+            state->cc.ac = (answer > 0x09);
+
             state->cc.p = parity(answer,8);
 
             state->e = answer;
@@ -350,6 +364,8 @@ int Emulate8080(State8080* state){
             else {
                 state->cc.s = 0;
             }
+
+            state->cc.ac = (answer > 0x09);
 
             state->cc.p = parity(answer,8);
 
@@ -389,6 +405,8 @@ int Emulate8080(State8080* state){
                 state->cc.s = 0;
             }
 
+            state->cc.ac = (answer > 0x09);
+
             state->cc.p = parity(answer,8);
 
             state->h = answer;
@@ -417,6 +435,8 @@ int Emulate8080(State8080* state){
             else {
                 state->cc.s = 0;
             }
+
+            state->cc.ac = (answer > 0x09);
 
             state->cc.p = parity(answer,8);
 
@@ -554,6 +574,8 @@ int Emulate8080(State8080* state){
                 state->cc.s = 0;
             }
 
+            state->cc.ac = (answer > 0x09);
+
             state->cc.p = parity(answer,8);
 
             state->l = answer;
@@ -582,6 +604,8 @@ int Emulate8080(State8080* state){
             else {
                 state->cc.s = 0;
             }
+
+            state->cc.ac = (answer > 0x09);
 
             state->cc.p = parity(answer,8);
 
@@ -614,6 +638,8 @@ int Emulate8080(State8080* state){
                 state->cc.s = 0;
             }
 
+            state->cc.ac = (answer > 0x09);
+
             state->cc.p = parity((answer & 0xff),8);
 
             state->memory[offset] = (answer & 0xff);
@@ -640,6 +666,8 @@ int Emulate8080(State8080* state){
             else {
                 state->cc.s = 0;
             }
+
+            state->cc.ac = (answer > 0x09);
 
             state->cc.p = parity((answer & 0xff),8);
 
@@ -687,6 +715,8 @@ int Emulate8080(State8080* state){
                 state->cc.s = 0;
             }
 
+            state->cc.ac = (answer > 0x09);
+
             state->cc.p = parity(answer,8);
 
             state->a = answer;
@@ -715,6 +745,8 @@ int Emulate8080(State8080* state){
             else {
                 state->cc.s = 0;
             }
+
+            state->cc.ac = (answer > 0x09);
 
             state->cc.p = parity(answer,8);
 
@@ -751,6 +783,8 @@ int Emulate8080(State8080* state){
             else    
                 state->cc.cy = 0;  
 
+            state->cc.ac = (answer > 0x09);
+
             state->cc.p = parity((answer & 0xff),8);
 
             state->a = (answer & 0xff);
@@ -785,6 +819,8 @@ int Emulate8080(State8080* state){
                 state->cc.cy = 1;    
             else    
                 state->cc.cy = 0;  
+
+            state->cc.ac = (answer > 0x09);
 
             state->cc.p = parity((answer & 0xff),8);
 
@@ -821,6 +857,8 @@ int Emulate8080(State8080* state){
             else    
                 state->cc.cy = 0;  
 
+            state->cc.ac = (answer > 0x09);
+
             state->cc.p = parity((answer & 0xff),8);
 
             state->a = (answer & 0xff);
@@ -855,6 +893,8 @@ int Emulate8080(State8080* state){
                 state->cc.cy = 1;    
             else    
                 state->cc.cy = 0;  
+
+            state->cc.ac = (answer > 0x09);
 
             state->cc.p = parity((answer & 0xff),8);
 
@@ -891,6 +931,8 @@ int Emulate8080(State8080* state){
             else    
                 state->cc.cy = 0;  
 
+            state->cc.ac = (answer > 0x09);
+
             state->cc.p = parity((answer & 0xff),8);
 
             state->a = (answer & 0xff); // conversion to 8 bit
@@ -925,6 +967,8 @@ int Emulate8080(State8080* state){
                 state->cc.cy = 1;    
             else    
                 state->cc.cy = 0;  
+
+            state->cc.ac = (answer > 0x09);
 
             state->cc.p = parity((answer & 0xff),8);
 
@@ -962,6 +1006,8 @@ int Emulate8080(State8080* state){
             else    
                 state->cc.cy = 0;  
 
+            state->cc.ac = (answer > 0x09);
+
             state->cc.p = parity((answer & 0xff),8);
 
             state->a = (answer & 0xff);
@@ -997,158 +1043,12 @@ int Emulate8080(State8080* state){
             else    
                 state->cc.cy = 0;  
 
-            state->cc.p = parity((answer & 0xff),8);
-
-            state->a = (answer & 0xff);
-            
-            break;
-        }
-        case 0xc6:{
-            uint16_t answer = (uint16_t) state->a + (uint16_t)opcode[1];
-
-            // Zero flag: if the result is zero,    
-            // set the flag to zero    
-            // else clear the flag  
-            if((answer & 0xff) == 0){ // make 8 bit answer
-                state->cc.z = 1;
-            }
-            else {
-                state->cc.z = 0;
-            }
-
-            // Sign flag: if bit 7 is set,    
-            // set the sign flag    
-            // else clear the sign flag  
-            if(answer & 0x80){
-                state->cc.s = 1;
-            }
-            else {
-                state->cc.s = 0;
-            }
-
-            // Carry flag    
-            if (answer > 0xff)    
-                state->cc.cy = 1;    
-            else    
-                state->cc.cy = 0;  
+            state->cc.ac = (answer > 0x09);
 
             state->cc.p = parity((answer & 0xff),8);
 
             state->a = (answer & 0xff);
             
-            state->pc+=1;
-
-            break;
-        }
-        case 0xce:{
-            uint16_t answer = (uint16_t) state->a + (uint16_t) opcode[1] + (uint16_t) state->cc.cy;
-
-            // Zero flag: if the result is zero,    
-            // set the flag to zero    
-            // else clear the flag  
-            if((answer & 0xff) == 0){ // make 8 bit answer
-                state->cc.z = 1;
-            }
-            else {
-                state->cc.z = 0;
-            }
-
-            // Sign flag: if bit 7 is set,    
-            // set the sign flag    
-            // else clear the sign flag  
-            if(answer & 0x80){
-                state->cc.s = 1;
-            }
-            else {
-                state->cc.s = 0;
-            }
-
-            // Carry flag    
-            if (answer > 0xff)    
-                state->cc.cy = 1;    
-            else    
-                state->cc.cy = 0;  
-
-            state->cc.p = parity((answer & 0xff),8);
-
-            state->a = (answer & 0xff);
-            
-            state->pc+=1;   
-
-            break;
-        }
-        case 0xd6:{
-            uint16_t answer = (uint16_t) state->a - (uint16_t) opcode[1];
-
-            // Zero flag: if the result is zero,    
-            // set the flag to zero    
-            // else clear the flag  
-            if((answer & 0xff) == 0){ // make 8 bit answer
-                state->cc.z = 1;
-            }
-            else {
-                state->cc.z = 0;
-            }
-
-            // Sign flag: if bit 7 is set,    
-            // set the sign flag    
-            // else clear the sign flag  
-            if(answer & 0x80){
-                state->cc.s = 1;
-            }
-            else {
-                state->cc.s = 0;
-            }
-
-            // Carry flag    
-            if (answer > 0xff)    
-                state->cc.cy = 1;    
-            else    
-                state->cc.cy = 0;  
-
-            state->cc.p = parity((answer & 0xff),8);
-
-            state->a = (answer & 0xff);
-
-            state->pc += 1;
-            
-            break;
-        }
-        case 0xde:{
-            uint16_t answer = (uint16_t) state->a - (uint16_t) opcode[1] - (uint16_t) state->cc.cy;
-
-            // Zero flag: if the result is zero,    
-            // set the flag to zero    
-            // else clear the flag  
-            if((answer & 0xff) == 0){ // make 8 bit answer
-                state->cc.z = 1;
-            }
-            else {
-                state->cc.z = 0;
-            }
-
-            // Sign flag: if bit 7 is set,    
-            // set the sign flag    
-            // else clear the sign flag  
-            if(answer & 0x80){
-                state->cc.s = 1;
-            }
-            else {
-                state->cc.s = 0;
-            }
-
-            // Carry flag    
-            if (answer > 0xff)    
-                state->cc.cy = 1;    
-            else    
-                state->cc.cy = 0;  
-
-            state->cc.p = parity((answer & 0xff),8);
-
-            state->a = (answer & 0xff);
-            
-            state->pc += 1;
-
             break;
         }
         case 0x88:{
@@ -1179,6 +1079,8 @@ int Emulate8080(State8080* state){
                 state->cc.cy = 1;    
             else    
                 state->cc.cy = 0;  
+
+            state->cc.ac = (answer > 0x09);
 
             state->cc.p = parity((answer & 0xff),8);
 
@@ -1215,6 +1117,8 @@ int Emulate8080(State8080* state){
             else    
                 state->cc.cy = 0;  
 
+            state->cc.ac = (answer > 0x09);
+
             state->cc.p = parity((answer & 0xff),8);
 
             state->a = (answer & 0xff);
@@ -1249,6 +1153,8 @@ int Emulate8080(State8080* state){
                 state->cc.cy = 1;    
             else    
                 state->cc.cy = 0;  
+
+            state->cc.ac = (answer > 0x09);
 
             state->cc.p = parity((answer & 0xff),8);
 
@@ -1285,6 +1191,8 @@ int Emulate8080(State8080* state){
             else    
                 state->cc.cy = 0;  
 
+            state->cc.ac = (answer > 0x09);
+
             state->cc.p = parity((answer & 0xff),8);
 
             state->a = (answer & 0xff);
@@ -1320,6 +1228,8 @@ int Emulate8080(State8080* state){
             else    
                 state->cc.cy = 0;  
 
+            state->cc.ac = (answer > 0x09);
+
             state->cc.p = parity((answer & 0xff),8);
 
             state->a = (answer & 0xff);
@@ -1354,6 +1264,8 @@ int Emulate8080(State8080* state){
                 state->cc.cy = 1;    
             else    
                 state->cc.cy = 0;  
+
+            state->cc.ac = (answer > 0x09);
 
             state->cc.p = parity((answer & 0xff),8);
 
@@ -1391,6 +1303,8 @@ int Emulate8080(State8080* state){
             else    
                 state->cc.cy = 0;  
 
+            state->cc.ac = (answer > 0x09);
+
             state->cc.p = parity((answer & 0xff),8);
 
             state->a = (answer & 0xff);
@@ -1425,6 +1339,8 @@ int Emulate8080(State8080* state){
                 state->cc.cy = 1;    
             else    
                 state->cc.cy = 0;  
+
+            state->cc.ac = (answer > 0x09);
 
             state->cc.p = parity((answer & 0xff),8);
 
@@ -1461,6 +1377,8 @@ int Emulate8080(State8080* state){
             else    
                 state->cc.cy = 0;  
 
+            state->cc.ac = (answer > 0x09);
+
             state->cc.p = parity((answer & 0xff),8);
 
             state->a = (answer & 0xff);
@@ -1496,6 +1414,8 @@ int Emulate8080(State8080* state){
             else    
                 state->cc.cy = 0;  
 
+            state->cc.ac = (answer > 0x09);
+
             state->cc.p = parity((answer & 0xff),8);
 
             state->a = (answer & 0xff);
@@ -1530,6 +1450,8 @@ int Emulate8080(State8080* state){
                 state->cc.cy = 1;    
             else    
                 state->cc.cy = 0;  
+
+            state->cc.ac = (answer > 0x09);
 
             state->cc.p = parity((answer & 0xff),8);
 
@@ -1603,6 +1525,8 @@ int Emulate8080(State8080* state){
             else    
                 state->cc.cy = 0;  
 
+            state->cc.ac = (answer > 0x09);
+
             state->cc.p = parity((answer & 0xff),8);
 
             state->a = (answer & 0xff);
@@ -1637,6 +1561,8 @@ int Emulate8080(State8080* state){
                 state->cc.cy = 1;    
             else    
                 state->cc.cy = 0;  
+
+            state->cc.ac = (answer > 0x09);
 
             state->cc.p = parity((answer & 0xff),8);
 
@@ -1674,6 +1600,8 @@ int Emulate8080(State8080* state){
             else    
                 state->cc.cy = 0;  
 
+            state->cc.ac = (answer > 0x09);
+
             state->cc.p = parity((answer & 0xff),8);
 
             state->a = (answer & 0xff);
@@ -1708,6 +1636,8 @@ int Emulate8080(State8080* state){
                 state->cc.cy = 1;    
             else    
                 state->cc.cy = 0;  
+
+            state->cc.ac = (answer > 0x09);
 
             state->cc.p = parity((answer & 0xff),8);
 
@@ -1744,6 +1674,8 @@ int Emulate8080(State8080* state){
             else    
                 state->cc.cy = 0;  
 
+            state->cc.ac = (answer > 0x09);
+
             state->cc.p = parity((answer & 0xff),8);
 
             state->a = (answer & 0xff);
@@ -1778,6 +1710,8 @@ int Emulate8080(State8080* state){
                 state->cc.cy = 1;    
             else    
                 state->cc.cy = 0;  
+
+            state->cc.ac = (answer > 0x09);
 
             state->cc.p = parity((answer & 0xff),8);
 
@@ -1814,6 +1748,8 @@ int Emulate8080(State8080* state){
             else    
                 state->cc.cy = 0;  
 
+            state->cc.ac = (answer > 0x09);
+
             state->cc.p = parity((answer & 0xff),8);
 
             state->a = (answer & 0xff);
@@ -1848,6 +1784,8 @@ int Emulate8080(State8080* state){
                 state->cc.cy = 1;    
             else    
                 state->cc.cy = 0;  
+
+            state->cc.ac = (answer > 0x09);
 
             state->cc.p = parity((answer & 0xff),8);
 
@@ -1884,6 +1822,8 @@ int Emulate8080(State8080* state){
             else    
                 state->cc.cy = 0;  
 
+            state->cc.ac = (answer > 0x09);
+
             state->cc.p = parity((answer & 0xff),8);
 
             state->a = (answer & 0xff);
@@ -1918,6 +1858,8 @@ int Emulate8080(State8080* state){
                 state->cc.cy = 1;    
             else    
                 state->cc.cy = 0;  
+
+            state->cc.ac = (answer > 0x09);
 
             state->cc.p = parity((answer & 0xff),8);
 
@@ -1955,6 +1897,8 @@ int Emulate8080(State8080* state){
             else    
                 state->cc.cy = 0;  
 
+            state->cc.ac = (answer > 0x09);
+
             state->cc.p = parity((answer & 0xff),8);
 
             state->a = (answer & 0xff);
@@ -1990,10 +1934,363 @@ int Emulate8080(State8080* state){
             else    
                 state->cc.cy = 0;  
 
+            state->cc.ac = (answer > 0x09);
+
             state->cc.p = parity((answer & 0xff),8);
 
             state->a = (answer & 0xff);
             
+            break;
+        }
+        case 0xc2:{ 
+            if(state->cc.z == 0){
+                state->pc = (opcode[2]<<8) | opcode[1];
+            }
+            else{
+                state->pc += 2;
+            }
+            break;
+        }
+        case 0xc3:{
+            state->pc = (opcode[2]<<8) | opcode[1];
+            break;
+        }
+        case 0xc4:{
+            if(state->cc.z == 0){
+                uint16_t res = state->pc+2; // CALL adr
+                state->memory[state->sp - 1] = (res>>8) & 0xff;
+                state->memory[state->sp - 2] = res & 0xff;
+                state->sp -= 2;
+                state->pc = (opcode[2]<<8) | opcode[1];
+            }
+            else{
+                state->pc+=2;
+            }
+            break;
+        }
+        case 0xc6:{
+            uint16_t answer = (uint16_t) state->a + (uint16_t)opcode[1];
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if((answer & 0xff) == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            // Carry flag    
+            if (answer > 0xff)    
+                state->cc.cy = 1;    
+            else    
+                state->cc.cy = 0;  
+
+            state->cc.ac = (answer > 0x09);
+
+            state->cc.p = parity((answer & 0xff),8);
+
+            state->a = (answer & 0xff);
+            
+            state->pc+=1;
+
+            break;
+        }
+        case 0xc9:{
+            uint8_t loworder = state->memory[state->sp];
+            uint8_t highorder = state->memory[state->sp+1];
+            state->pc = (highorder<<8) | loworder;
+            state->sp += 2;
+            break;
+        }
+        case 0xca: {
+            if(state->cc.z == 1){
+                state->pc = (opcode[2]<<8) | opcode[1]; 
+            }
+            else{
+                state->pc += 2;
+            }
+            break;
+        }
+        case 0xcc:{
+            if(state->cc.z == 1){
+                uint16_t res = state->pc+2; // CALL adr
+                state->memory[state->sp - 1] = (res>>8) & 0xff;
+                state->memory[state->sp - 2] = res & 0xff;
+                state->sp -= 2;
+                state->pc = (opcode[2]<<8) | opcode[1];
+            }
+            else {
+                state->pc += 2;
+            }
+            break;
+        }
+        case 0xcd:{
+            uint16_t res = state->pc+2; // CALL adr
+            state->memory[state->sp - 1] = (res>>8) & 0xff;
+            state->memory[state->sp - 2] = res & 0xff;
+            state->sp -= 2;
+            state->pc = (opcode[2]<<8) | opcode[1];
+            break;
+        }
+        case 0xce:{
+            uint16_t answer = (uint16_t) state->a + (uint16_t) opcode[1] + (uint16_t) state->cc.cy;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if((answer & 0xff) == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            // Carry flag    
+            if (answer > 0xff)    
+                state->cc.cy = 1;    
+            else    
+                state->cc.cy = 0;  
+
+            state->cc.ac = (answer > 0x09);
+
+            state->cc.p = parity((answer & 0xff),8);
+
+            state->a = (answer & 0xff);
+            
+            state->pc+=1;   
+
+            break;
+        }
+        case 0xd2:{
+            if(state->cc.cy == 0){
+                state->pc = (opcode[2]<<8) | opcode[1];
+            }
+            else{
+                state->pc+=2;
+            }
+            break;
+        }
+        case 0xd4:{
+            if(state->cc.cy == 0){
+                uint16_t res = state->pc+2; // CALL adr
+                state->memory[state->sp - 1] = (res>>8) & 0xff;
+                state->memory[state->sp - 2] = res & 0xff;
+                state->sp -= 2;
+                state->pc = (opcode[2]<<8) | opcode[1];
+            }
+            else{
+                state->pc+= 2;
+            }
+            break;
+        }
+        case 0xd6:{
+            uint16_t answer = (uint16_t) state->a - (uint16_t) opcode[1];
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if((answer & 0xff) == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            // Carry flag    
+            if (answer > 0xff)    
+                state->cc.cy = 1;    
+            else    
+                state->cc.cy = 0;  
+
+            state->cc.ac = (answer > 0x09);
+
+            state->cc.p = parity((answer & 0xff),8);
+
+            state->a = (answer & 0xff);
+
+            state->pc += 1;
+            
+            break;
+        }
+        case 0xda:{
+            if(state->cc.cy == 1){
+                state->pc = (opcode[2]<<8) | opcode[1];
+            }
+            else{
+                state->pc+=2;
+            }
+            break;
+        }
+        case 0xdc:{
+            if(state->cc.cy == 1){
+                uint16_t res = state->pc+2; // CALL adr
+                state->memory[state->sp - 1] = (res>>8) & 0xff;
+                state->memory[state->sp - 2] = res & 0xff;
+                state->sp -= 2;
+                state->pc = (opcode[2]<<8) | opcode[1];
+            }
+            else{
+                state->pc+=2;
+            }
+            break;
+        }
+        case 0xde:{
+            uint16_t answer = (uint16_t) state->a - (uint16_t) opcode[1] - (uint16_t) state->cc.cy;
+
+            // Zero flag: if the result is zero,    
+            // set the flag to zero    
+            // else clear the flag  
+            if((answer & 0xff) == 0){ // make 8 bit answer
+                state->cc.z = 1;
+            }
+            else {
+                state->cc.z = 0;
+            }
+
+            // Sign flag: if bit 7 is set,    
+            // set the sign flag    
+            // else clear the sign flag  
+            if(answer & 0x80){
+                state->cc.s = 1;
+            }
+            else {
+                state->cc.s = 0;
+            }
+
+            // Carry flag    
+            if (answer > 0xff)    
+                state->cc.cy = 1;    
+            else    
+                state->cc.cy = 0;  
+
+            state->cc.ac = (answer > 0x09);
+
+            state->cc.p = parity((answer & 0xff),8);
+
+            state->a = (answer & 0xff);
+            
+            state->pc += 1;
+
+            break;
+        }
+        case 0xe2:{
+            if(state->cc.p == 0){
+                state->pc = (opcode[2]<<8) | opcode[1];
+            }
+            else {
+                state->pc += 2;
+            }
+            break;
+        }
+        case 0xe4:{
+            if(state->cc.p == 0){
+                uint16_t res = state->pc+2; // CALL adr
+                state->memory[state->sp - 1] = (res>>8) & 0xff;
+                state->memory[state->sp - 2] = res & 0xff;
+                state->sp -= 2;
+                state->pc = (opcode[2]<<8) | opcode[1];
+            }
+            else{
+                state->pc += 2;
+            }
+            break;
+        }
+        case 0xea:{
+            if(state->cc.p == 1){
+                state->pc = (opcode[2]<<8) | opcode[1];       
+            }
+            else{
+                state->pc += 2;
+            }
+            break;
+        }
+        case 0xec:{
+            if(state->cc.p == 1){
+                uint16_t res = state->pc+2; // CALL adr
+                state->memory[state->sp - 1] = (res>>8) & 0xff;
+                state->memory[state->sp - 2] = res & 0xff;
+                state->sp -= 2;
+                state->pc = (opcode[2]<<8) | opcode[1];
+            }
+            else{
+                state->pc +=2;
+            }
+            break;
+        }
+        case 0xf2:{
+            if(state->cc.s == 0){
+                state->pc = (opcode[2]<<8) | opcode[1];       
+            }
+            else{
+                state->pc += 2;
+            }
+            break;
+        }
+        case 0xf4:{
+            if(state->cc.s == 0){
+                uint16_t res = state->pc+2; // CALL adr
+                state->memory[state->sp - 1] = (res>>8) & 0xff;
+                state->memory[state->sp - 2] = res & 0xff;
+                state->sp -= 2;
+                state->pc = (opcode[2]<<8) | opcode[1];
+            }
+            else{
+                state->pc += 2;
+            }
+            break;
+        }
+        case 0xfa:{
+            if(state->cc.s == 1){
+                state->pc = (opcode[2]<<8) | opcode[1];       
+            }
+            else{
+                state->pc += 2;
+            }
+            break;
+        }
+        case 0xfc:{
+            if(state->cc.s == 1){
+                uint16_t res = state->pc+2; // CALL adr
+                state->memory[state->sp - 1] = (res>>8) & 0xff;
+                state->memory[state->sp - 2] = res & 0xff;
+                state->sp -= 2;
+                state->pc = (opcode[2]<<8) | opcode[1];
+            }
+            else{
+                state->pc += 2;
+            }
             break;
         }
     }    
